@@ -12,7 +12,7 @@ func _ready():
 	
 func _physics_process(_delta):
 	velocity = move_and_slide(velocity, Vector2.ZERO)
-	position.x = wrapf(position.x, 0, Global.VP.x)	
+	position.x = wrapf(position.x, 0, Global.VP.x) 
 	position.y = wrapf(position.y, 0, Global.VP.y)	
 
 
