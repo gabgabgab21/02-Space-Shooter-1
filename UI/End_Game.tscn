@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Wayner-K70ED.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://UI/End_Game.gd" type="Script" id=2]
+[ext_resource path="res://Project2Assets/background3.jpeg" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=3]
 font_data = ExtResource( 1 )
@@ -17,9 +18,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
 
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 3 )
+
 [node name="Label" type="Label" parent="."]
 margin_right = 1024.0
 margin_bottom = 400.0
+custom_colors/font_color = Color( 0.12549, 0.435294, 0.870588, 1 )
 custom_fonts/font = SubResource( 3 )
 text = "Thanks for playing! Your final score was "
 align = 1
@@ -30,6 +37,8 @@ margin_left = 462.0
 margin_top = 350.0
 margin_right = 562.0
 margin_bottom = 390.0
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.0509804, 0.121569, 0.368627, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "Play again?"
 
@@ -38,6 +47,7 @@ margin_left = 462.0
 margin_top = 400.0
 margin_right = 562.0
 margin_bottom = 440.0
+custom_colors/font_color = Color( 0.0509804, 0.121569, 0.368627, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "Quit"
 

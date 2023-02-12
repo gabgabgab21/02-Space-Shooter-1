@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://UI/HUD.gd" type="Script" id=1]
 [ext_resource path="res://Wayner-K70ED.ttf" type="DynamicFontData" id=2]
@@ -6,6 +6,9 @@
 [ext_resource path="res://Asteroid/Asteroid.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Player/Player_Container.gd" type="Script" id=6]
+[ext_resource path="res://Project2Assets/Starfield-Slow-20sec-Loop (1).ogv" type="VideoStream" id=7]
+[ext_resource path="res://Project2Assets/Wavy_Thoughts.wav" type="AudioStream" id=8]
+[ext_resource path="res://Effects/Music.gd" type="Script" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 2 )
@@ -20,12 +23,21 @@ font_data = ExtResource( 2 )
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=5]
+size = 13
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=6]
 font_data = ExtResource( 2 )
 
 [node name="Game" type="Node2D"]
+
+[node name="VideoPlayer" type="VideoPlayer" parent="."]
+margin_left = -41.0
+margin_top = -102.0
+margin_right = 1077.0
+margin_bottom = 746.0
+stream = ExtResource( 7 )
+autoplay = true
 
 [node name="Player_Container" type="Node2D" parent="."]
 script = ExtResource( 6 )
@@ -113,6 +125,10 @@ margin_right = 562.0
 margin_bottom = 440.0
 custom_fonts/font = SubResource( 6 )
 text = "Quit"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+script = ExtResource( 9 )
 
 [connection signal="timeout" from="UI/HUD/Timer" to="UI/HUD" method="_on_Timer_timeout"]
 [connection signal="pressed" from="UI/Menu/Restart" to="UI/Menu" method="_on_Restart_pressed"]
