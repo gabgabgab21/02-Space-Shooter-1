@@ -1,8 +1,8 @@
 # 02 Space Shooter
 
-Context and date
+February 11, 2023
 
-Description
+A 2D Arcade Space Shooter Game.
 
 ## Implementation
 
